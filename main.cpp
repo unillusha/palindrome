@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -22,7 +23,8 @@ int main() {
     cin >> input;
 
     if (isPalindrome(input)) {
-        cout << "The string is a palindrome." << endl;
+        sort(input.begin(), input.end());
+        cout << "Sorted palindrome string: " << input << endl;
     } else {
         cout << "The string is not a palindrome." << endl;
     }
