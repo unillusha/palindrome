@@ -61,16 +61,23 @@ string findSmallestPalindrome(string s) {
 }
 
 int main() {
-    string input;
-    cout << "Enter the string: ";
-    cin >> input;
+   while (true) {
+        string input;
+        cout << "Enter the string (or type 'exit' to quit): ";
+        cin >> input;
 
-    string result = findSmallestPalindrome(input);
+        // Exit condition
+        if (input == "exit") {
+            break;
+        }
 
-    if (result.empty()) {
-        cout << "No palindrome can be formed." << endl;
-    } else {
-        cout << "The lexicographically smallest palindrome is: " << result << endl;
+        string result = findSmallestPalindrome(input);
+
+        if (result.empty()) {
+            cout << "No palindrome can be formed." << endl;
+        } else {
+            cout << "The lexicographically smallest palindrome is: " << result << endl;
+        }
     }
 
     return 0;
